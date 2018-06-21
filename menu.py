@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 import time 
 import webbrowser
-import commands
+import subprocess
 menu='''
 press 1 to check current time and date :
-press2 to scan all ur mac adresses in ur current connected network :
+press 2 to scan all ur mac adresses in ur current connected network :
 press 3 to shutdown ur machine after 15 min :
 press 4 to search something on google :
 press 5 to lgout ur current machine :
@@ -20,8 +20,8 @@ if choice == '1' :
 elif choice == '4':
 	find=input("enter ur query: ")
 	webbrowser.open_new_tab("https://www.google.com/search?q="+find)
-else :
-	print("invalid option")
 if choice == '2':
-   mac_add= commands.getoutput("cat /sys/class/net/*/address")
+   mac_add=subprocess.getoutput("cat /sys/class/net/*/address")
    print(mac_add)
+else :
+    print("invalid option")
