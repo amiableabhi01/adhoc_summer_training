@@ -3,7 +3,7 @@ import socket
 #   type of ip V4  ,   type of protocol UDP
 s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 
-for i in range(10000):
+msg=raw_input("enter any linux command: ")
 
-    cmd=raw_input("enter any linux command: ")
-s.sendto(cmd,("192.168.10.210",8000))    
+s.sendto(msg,("192.168.43.135",8000))    
+
